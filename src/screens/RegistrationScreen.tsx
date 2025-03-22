@@ -6,8 +6,6 @@ import {
   TouchableOpacity,
   StyleSheet,
   ImageBackground,
-  KeyboardAvoidingView,
-  Platform,
   ScrollView,
   Alert,
 } from 'react-native';
@@ -54,7 +52,6 @@ const RegistrationScreen: React.FC<RegistrationScreenProps> = ({ navigation }) =
       source={{ uri: 'https://images.unsplash.com/photo-1557683311-eac922347aa1?q=80&w=2940' }}
       style={styles.backgroundImage}
     >
-      <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : 'height'} style={styles.container}>
         <ScrollView contentContainerStyle={styles.scrollContent} keyboardShouldPersistTaps="handled">
           <View style={styles.overlay}>
             <Text style={styles.title}>Create Account</Text>
@@ -67,7 +64,7 @@ const RegistrationScreen: React.FC<RegistrationScreenProps> = ({ navigation }) =
                     <Ionicons name="person-outline" size={20} color="#666" style={styles.icon} />
                     <TextInput
                       style={styles.input}
-                      placeholder="Full Name"
+                      placeholder="Full Name *"
                       placeholderTextColor="#666"
                       onChangeText={handleChange('name')}
                       onBlur={handleBlur('name')}
@@ -80,7 +77,7 @@ const RegistrationScreen: React.FC<RegistrationScreenProps> = ({ navigation }) =
                     <Ionicons name="mail-outline" size={20} color="#666" style={styles.icon} />
                     <TextInput
                       style={styles.input}
-                      placeholder="Email"
+                      placeholder="Email *"
                       placeholderTextColor="#666"
                       keyboardType="email-address"
                       onChangeText={handleChange('email')}
@@ -95,7 +92,7 @@ const RegistrationScreen: React.FC<RegistrationScreenProps> = ({ navigation }) =
                     <Ionicons name="call-outline" size={20} color="#666" style={styles.icon} />
                     <TextInput
                       style={styles.input}
-                      placeholder="Phone"
+                      placeholder="Phone *"
                       placeholderTextColor="#666"
                       keyboardType="numeric"
                       onChangeText={handleChange('phone')}
@@ -110,7 +107,7 @@ const RegistrationScreen: React.FC<RegistrationScreenProps> = ({ navigation }) =
                     <Ionicons name="lock-closed-outline" size={20} color="#666" style={styles.icon} />
                     <TextInput
                       style={[styles.input, styles.passwordInput]}
-                      placeholder="Password"
+                      placeholder="Password *"
                       placeholderTextColor="#666"
                       secureTextEntry={!showPassword}
                       onChangeText={handleChange('password')}
@@ -131,15 +128,11 @@ const RegistrationScreen: React.FC<RegistrationScreenProps> = ({ navigation }) =
             </Formik>
           </View>
         </ScrollView>
-      </KeyboardAvoidingView>
     </ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
-  container: { 
-    flex: 1 
-  },
   scrollContent: { 
     flexGrow: 1 
   },

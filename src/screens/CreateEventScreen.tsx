@@ -115,7 +115,7 @@ const CreateEventScreen: React.FC<CreateEventScreenProps> = ({ navigation, route
               <View style={styles.form}>
                 <InputField
                   icon="calendar-outline"
-                  placeholder="Event Name"
+                  placeholder="Event Name *"
                   value={values.name}
                   onChangeText={handleChange('name')}
                   onBlur={handleBlur('name')}
@@ -124,7 +124,7 @@ const CreateEventScreen: React.FC<CreateEventScreenProps> = ({ navigation, route
 
                 <InputField
                   icon="document-text-outline"
-                  placeholder="Event Description (optional)"
+                  placeholder="Event Description"
                   value={values.description}
                   onChangeText={handleChange('description')}
                   onBlur={handleBlur('description')}
@@ -132,7 +132,7 @@ const CreateEventScreen: React.FC<CreateEventScreenProps> = ({ navigation, route
 
                 <InputField
                   icon="calendar-clear-outline"
-                  placeholder="Start Date (YYYY-MM-DD)"
+                  placeholder="Start Date * (YYYY-MM-DD)"
                   value={values.startDate}
                   onChangeText={handleChange('startDate')}
                   onBlur={handleBlur('startDate')}
@@ -141,7 +141,7 @@ const CreateEventScreen: React.FC<CreateEventScreenProps> = ({ navigation, route
 
                 <InputField
                   icon="calendar-outline"
-                  placeholder="End Date (optional, YYYY-MM-DD)"
+                  placeholder="End Date (YYYY-MM-DD)"
                   value={values.endDate}
                   onChangeText={handleChange('endDate')}
                   onBlur={handleBlur('endDate')}
@@ -232,6 +232,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 20,
+    flexWrap: 'wrap', 
+    gap: 1
   },
   recurrenceButton: {
     padding: 10,
