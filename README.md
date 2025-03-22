@@ -34,7 +34,7 @@ A **event management app** that allows users to create, edit, view, and delete e
 
 ### **1️⃣ Clone the Repository**  
 ```sh
-git clone https://github.com/your-username/event-planner.git
+git clone https://github.com/Jayeshkushwaha/EventPlanner.git
 cd event-planner
 ```
 
