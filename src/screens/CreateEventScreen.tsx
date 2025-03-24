@@ -158,7 +158,7 @@ const CreateEventScreen: React.FC<CreateEventScreenProps> = ({ navigation, route
                       ]}
                       onPress={() => handleChange('recurrence')(option)}
                     >
-                      <Text style={styles.recurrenceText}>{option}</Text>
+                      <Text style={[styles.recurrenceText, values.recurrence === option && styles.activeRecurrenceText]}>{option}</Text>
                     </TouchableOpacity>
                   ))}
                 </View>
@@ -232,7 +232,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 20,
-    flexWrap: 'wrap', 
+    flexWrap: 'wrap',
     gap: 1
   },
   recurrenceButton: {
@@ -247,6 +247,9 @@ const styles = StyleSheet.create({
   },
   recurrenceText: {
     color: '#000',
+  },
+  activeRecurrenceText: {
+    color: '#fff',
   },
   saveButton: {
     backgroundColor: '#007AFF',
